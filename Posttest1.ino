@@ -44,7 +44,7 @@ void setup() {
   };
 
   Serial.println("Warming up...");
-  delay(60000); // lebih aman 1 menit
+  delay(60000);
 }
 
 void loop() {
@@ -53,13 +53,11 @@ void loop() {
   gasValue = analogRead(MQ_AOUT);
   Serial.println(gasValue);
 
-  // reset LED
   digitalWrite(LED1, LOW);
   digitalWrite(LED2, LOW);
   digitalWrite(LED3, LOW);
 
   if (gasValue == 0) {
-    // nanti bisa ditambah kontrol IoT
     Serial.println("Tidak ada gas");
   }
   else if (gasValue <= 201) {
